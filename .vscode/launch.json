@@ -1,0 +1,31 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Nuxt server-side",
+            "program": "${workspaceFolder}/node_modules/nuxt/bin/nuxt.js",
+            "args": ["dev"],
+            "console": "integratedTerminal",
+            "restart": true,
+            "runtimeArgs": ["--nolazy"],
+            "env": {
+                "NODE_ENV": "development"
+            }
+        },
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Nuxt client-side",
+            "url": "http://localhost:3000",
+            "webRoot": "${workspaceFolder}"
+        }
+    ],
+    "compounds": [
+        {
+            "name": "Full-stack",
+            "configurations": ["Nuxt server-side", "Nuxt client-side"]
+        }
+    ]
+}

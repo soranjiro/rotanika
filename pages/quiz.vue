@@ -3,8 +3,9 @@
         <h1>Rotanika</h1>
         <div v-if="quiz">
             <p>ジャンル: {{ genres[genreIndex] }}</p>
+            <p>お題: {{ keywords[currentKeywordIndex] }}</p>
+            <br>
             <p>Q{{ currentQuizCount }}: {{ quiz.question }}</p>
-            <p>キーワード: {{ keywords[currentKeywordIndex] }}</p>
             <button v-for="(answer, index) in quiz.answers" :key="index" @click="submitAnswer(index)">
             {{ answer }}
             </button>

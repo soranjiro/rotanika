@@ -2,11 +2,13 @@
     <div>
         <h1>結果</h1>
         <p>ジャンル: {{ genres[genreIndex] }}</p>
-        <p v-if="isCorrect">正解です！</p>
-        <p v-else>残念、失敗です。</p>
-        <p>キーワード: {{ keywords[this.$route.query.realAnswerIndex] }}</p>
-        <!-- <p>答え: {{ keywordsNumber[this.$route.query.finalAnswerIndex] }}</p> -->
-        <button @click="goBack">戻る</button>
+        <p v-if="isCorrect">Rotanikaが予測したお題: {{ keywords[this.$route.query.finalAnswerIndex] }}</p>
+        <p v-else>Rotanikaが予測したお題: ***<br>（成功すると確認できます）</p>
+        <p>あなたのお題: {{ keywords[this.$route.query.realAnswerIndex] }}</p>
+        <br>
+        <p v-if="isCorrect">成功です！<br>Rotanikaが予測したお題とあなたのお題が一致しました！</p>
+        <p v-else>残念、失敗です。<br>Rotanikaはあなたのお題を予想できませんでした。</p>
+        <button @click="goBack">もう一度</button>
     </div>
 </template>
 

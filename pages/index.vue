@@ -1,6 +1,11 @@
 <template>
     <div>
         <h1>Rotanika</h1>
+        <div>
+            RotanikaはAkinatorに憧れている魔神です。<br>
+            Rotanikaの質問に正確に答えて、あなたのお題を答えさせてあげよう！<br>
+            ただし、Rotanikaはまだ未熟なので、お題はこちらで決めます。
+        </div>
         <div v-if="genres">
             <p>ジャンルを選んでください</p>
             <button v-for="(genre, index) in genres" :key="index" @click="submitGenre(index)">
